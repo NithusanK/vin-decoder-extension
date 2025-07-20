@@ -1,8 +1,5 @@
 document.getElementById("decodeBtn").addEventListener("click", function () {
-  const vin = document
-    .getElementById("vinInput")
-    .ariaValueMax.trim()
-    .toUpperCase();
+  const vin = document.getElementById("vinInput").value.trim().toUpperCase();
 
   if (vin.length !== 17) {
     document.getElementById("result").innerText =
@@ -10,8 +7,7 @@ document.getElementById("decodeBtn").addEventListener("click", function () {
     return;
   }
 
-  const url =
-    "https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/${vin}?format=json";
+  const url = `https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/${vin}?format=json`;
 
   fetch(url)
     .then((response) => response.json())
@@ -23,7 +19,7 @@ document.getElementById("decodeBtn").addEventListener("click", function () {
       fields.forEach((field) => {
         const match = results.find((item) => item.Variable === field);
         if (match && match.Value) {
-          output += "<b>${field}:</b> ${match.Value}<br>";
+          output += `<b>${field}:</b> ${match.Value}<br>`;
         }
       });
 

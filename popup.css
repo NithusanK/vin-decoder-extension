@@ -2,10 +2,13 @@ body{
     font-family: Arial, sans-serif;
     width: 300px;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 input, button{
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     padding: 8px;
     margin: 5px 0;
 }
