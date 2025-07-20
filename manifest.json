@@ -4,7 +4,7 @@
     "version": "1.0",
     "description": "Decoding VINs",
     "action": {
-        "default_popup": "popup.html",
+        "default_popup": "popup.html"
     },
     "permissions": ["storage"]
 }
